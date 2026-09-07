@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} — {{ site.title }}{% endblock %}
+{% block description %}{{ page.summary }}{% endblock %}
+{% block content %}
+<article class="page">
+  <h1>{{ page.title }}</h1>
+  <div class="page-meta">
+    {% if page.date %}<time>{{ page.date.isoformat() }}</time>{% endif %}
+    {% if page.tags %}
+    <span class="tags">
+      {% for tag in page.tags %}<a class="tag" href="/tags/{{ tag|slugify }}/">{{ tag }}</a>{% endfor %}
+    </span>
+    {% endif %}
+  </div>
+
+  {{ page.body_html|safe }}
+
+  {% if backlinks %}
+  <section class="backlinks">
+    <h2>Linked from</h2>
+    <ul>
+      {% for bp in backlinks %}
+      <li><a href="{{ bp.url }}">{{ bp.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>
+{% endblock %}

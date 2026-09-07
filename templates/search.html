@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Search — {{ site.title }}{% endblock %}
+{% block content %}
+<article class="listing">
+  <h1>Search</h1>
+  <input id="search-input" type="search" placeholder="Search titles, summaries, tags…" autofocus>
+  <ul id="search-results" class="page-list"></ul>
+</article>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/search.js"></script>
+{% endblock %}

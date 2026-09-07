@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} — {{ site.title }}{% endblock %}
+{% block content %}
+<article class="listing">
+  <h1>{{ title }}</h1>
+  <ul class="page-list">
+    {% for page in pages %}
+    <li>
+      {% if page.date %}<time>{{ page.date.isoformat() }}</time>{% endif %}
+      <a href="{{ page.url }}">{{ page.title }}</a>
+      <p class="summary">{{ page.summary }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</article>
+{% endblock %}

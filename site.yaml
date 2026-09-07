@@ -1,0 +1,14 @@
+title: "Alexandria"
+author: "Jason Pittman"
+base_url: "https://jason-alexandria.com"
+description: "Notes and essays, densely cross-referenced."
+nav:
+  - label: "All"
+    url: "/all/"
+  - label: "Tags"
+    url: "/tags/"
+  - label: "Search"
+    url: "/search/"
+  - label: "RSS"
+    url: "/feed.xml"
+feed_length: 30

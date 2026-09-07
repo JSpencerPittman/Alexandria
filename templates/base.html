@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site.title }}{% endblock %}</title>
+<meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
+</head>
+<body>
+<header class="site-header">
+  <a class="site-title" href="/">{{ site.title }}</a>
+  <nav>
+    {% for item in site.nav %}
+    <a href="{{ item.url }}">{{ item.label }}</a>
+    {% endfor %}
+  </nav>
+</header>
+<main>
+{% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <span>{{ site.author }}</span>
+</footer>
+<div id="popup" class="popup" hidden></div>
+<script src="/static/js/popups.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>
