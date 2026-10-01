@@ -50,7 +50,7 @@ python -m venv .venv
 .venv/Scripts/activate       # Windows; use `source .venv/bin/activate` on macOS/Linux
 pip install -e .
 
-python -m alexandria new "My First Post"   # scaffolds content/my-first-post.md
+python -m alexandria new "My First Post"   # scaffolds content/essays/my-first-post.md
 python -m alexandria build                 # renders content/ -> output/
 python -m alexandria serve                 # build + serve http://127.0.0.1:8000, rebuilds on save
 ```

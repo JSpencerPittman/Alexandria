@@ -31,7 +31,7 @@ def cmd_serve(args: argparse.Namespace) -> None:
 def cmd_new(args: argparse.Namespace) -> None:
     config = SiteConfig.load(Path(args.config))
     slug = slugify(args.title)
-    target = config.content_dir / f"{slug}.md" if not args.path else Path(args.path)
+    target = config.content_dir / "essays" / f"{slug}.md" if not args.path else Path(args.path)
     if target.exists():
         raise SystemExit(f"{target} already exists")
     target.parent.mkdir(parents=True, exist_ok=True)
